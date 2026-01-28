@@ -62,3 +62,19 @@ function loginSchool() {
 function getActiveSchool() {
   return JSON.parse(localStorage.getItem(ACTIVE_SCHOOL_KEY));
 }
+
+// Seed sample school if none exist
+(function seedSampleSchool() {
+  const schools = getSchools();
+  if (schools.length === 0) {
+    schools.push({
+      name: "Little Angels School",
+      location: "Bengaluru",
+      password: "test123",
+      logo: "littleangels.png"
+    });
+    saveSchools(schools);
+  }
+})();
+
+
