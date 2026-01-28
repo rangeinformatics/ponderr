@@ -1,0 +1,69 @@
+/ponderr-schoolz
+│
+├── index.html                 # Landing page (gallery, apps, announcements, login)
+├── student-register.html      # School-only register page
+├── inquiry.html               # Admission inquiry form
+├── signup.html                # Add school page
+│
+├── /assets
+│   ├── /css
+│   │     ├── styles.css       # Main UI styling
+│   │     ├── themes.css       # Light/Dark/Contrast themes
+│   │     └── components.css   # Optional: buttons, cards, tables
+│   │
+│   ├── /js
+│   │     ├── auth.js          # Login, signup, school storage
+│   │     ├── register.js      # Student register logic
+│   │     ├── inquiry.js       # Inquiry form logic
+│   │     ├── announcements.js # Announcements + grade tabs
+│   │     ├── gallery.js       # Gallery scrolling logic
+│   │     ├── apps.js          # Apps banner logic
+│   │     └── theme.js         # Theme switching logic
+│   │
+│   ├── /logos
+│   │     ├── ponderr.png      # Main brand logo
+│   │     ├── school1.png
+│   │     ├── school2.png
+│   │     └── ...              # Each school uploads here
+│   │
+│   ├── /gallery
+│   │     ├── school1.jpg
+│   │     ├── school2.jpg
+│   │     ├── activity1.jpg
+│   │     ├── activity2.jpg
+│   │     └── ...              # Unlimited images
+│   │
+│   ├── /apps
+│   │     ├── byjus.png
+│   │     ├── khan.png
+│   │     ├── duolingo.png
+│   │     ├── vedantu.png
+│   │     └── ...              # Add more apps anytime
+│   │
+│   ├── /icons
+│   │     ├── facebook.svg
+│   │     ├── twitter.svg
+│   │     ├── instagram.svg
+│   │     ├── linkedin.svg
+│   │     └── theme.svg
+│   │
+│   └── /data
+│         ├── announcements.json   # Future: store announcements
+│         ├── apps.json            # Future: store app links
+│         ├── gallery.json         # Future: store gallery metadata
+│         └── schools.json         # Future: store school list (if API not used)
+│
+├── /components
+│   ├── header.html             # Optional: reusable header
+│   ├── footer.html             # Optional: reusable footer
+│   └── nav.html                # Optional: reusable nav
+│
+├── /docs
+│   ├── README.md               # Documentation
+│   ├── CHANGELOG.md            # Version history
+│   └── ROADMAP.md              # Future plans
+│
+└── /future-api                 # Placeholder for backend integration
+    ├── schema.sql              # DB schema (future)
+    ├── endpoints.md            # API endpoints (future)
+    └── auth-flow.md            # Login flow (future)
