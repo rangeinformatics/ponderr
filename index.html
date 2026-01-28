@@ -5,6 +5,7 @@
   <title>Ponderr Schoolz – Home</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/auth.js"></script>
+  <script src="assets/js/theme.js"></script>
 </head>
 
 <body class="theme-light">
@@ -17,7 +18,7 @@
     </div>
     <div class="app-title">
       <h1>Ponderr Schoolz</h1>
-      <span>Unified School Management Portal</span>
+      <span>Empowering Schools, Students & Parents</span>
     </div>
   </div>
 
@@ -27,18 +28,22 @@
     <a href="signup.html">Add School</a>
   </nav>
 
-  <div class="theme-switcher">
-    <button onclick="setTheme('theme-light')" class="btn-ghost">Light</button>
-    <button onclick="setTheme('theme-dark')" class="btn-ghost">Dark</button>
-    <button onclick="setTheme('theme-contrast')" class="btn-ghost">Contrast</button>
-  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
 </header>
 
 <!-- PAGE CONTENT -->
 <div class="page">
 
+  <!-- NEWS SECTION -->
+  <h2>General News</h2>
+  <div class="news-cards">
+    <div class="news-card">New academic year begins April 2025</div>
+    <div class="news-card">National Science Day celebrations across schools</div>
+    <div class="news-card">CBSE announces new skill‑based modules</div>
+  </div>
+
   <!-- GALLERY -->
-  <h2>Our Schools & Activities</h2>
+  <h2>Gallery</h2>
   <div class="scroll-gallery">
     <div class="scroll-track">
       <img src="assets/gallery/school1.jpg">
@@ -52,69 +57,30 @@
   <!-- APPS -->
   <h2>Educational Apps</h2>
   <div class="apps-banner">
-    <a href="https://byjus.com" target="_blank"><img src="assets/apps/byjus.png"></a>
-    <a href="https://khanacademy.org" target="_blank"><img src="assets/apps/khan.png"></a>
-    <a href="https://duolingo.com" target="_blank"><img src="assets/apps/duolingo.png"></a>
-    <a href="https://vedantu.com" target="_blank"><img src="assets/apps/vedantu.png"></a>
+    <a href="https://ponderr.school" target="_blank"><img src="assets/apps/ponderr.png"></a>
+    <a href="https://myrezz.com" target="_blank"><img src="assets/apps/myrezz.png"></a>
   </div>
 
   <!-- ANNOUNCEMENTS -->
-  <h2>Announcements & Live Sessions</h2>
-
+  <h2>Announcements</h2>
   <div class="grade-tabs">
-    <button onclick="showAnnouncements('LKG')">LKG</button>
-    <button onclick="showAnnouncements('UKG')">UKG</button>
-    <button onclick="showAnnouncements('Grade1')">Grade 1</button>
-    <button onclick="showAnnouncements('Grade2')">Grade 2</button>
-    <button onclick="showAnnouncements('Grade3')">Grade 3</button>
+    <button onclick="showAnnouncements('General')">General</button>
+    <button onclick="showAnnouncements('Events')">Events</button>
+    <button onclick="showAnnouncements('Workshops')">Workshops</button>
   </div>
 
   <table class="announcement-table" id="announcementTable">
     <thead>
       <tr>
-        <th>Session</th>
+        <th>Title</th>
         <th>Date</th>
-        <th>Time</th>
-        <th>Link</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
 
-  <script>
-    const announcements = {
-      LKG: [
-        { session: "Phonics Live", date: "Feb 2", time: "10:00 AM", link: "#" },
-        { session: "Story Time", date: "Feb 3", time: "11:00 AM", link: "#" }
-      ],
-      UKG: [
-        { session: "Math Basics", date: "Feb 4", time: "9:30 AM", link: "#" }
-      ],
-      Grade1: [
-        { session: "EVS – Plants", date: "Feb 5", time: "12:00 PM", link: "#" }
-      ],
-      Grade2: [],
-      Grade3: []
-    };
-
-    function showAnnouncements(grade) {
-      const tbody = document.querySelector("#announcementTable tbody");
-      tbody.innerHTML = "";
-
-      announcements[grade].forEach(a => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${a.session}</td>
-          <td>${a.date}</td>
-          <td>${a.time}</td>
-          <td><a href="${a.link}" target="_blank">Join</a></td>
-        `;
-        tbody.appendChild(tr);
-      });
-    }
-
-    showAnnouncements("LKG");
-  </script>
+  <script src="assets/js/announcements.js"></script>
 
   <!-- LOGIN BOX -->
   <div class="auth-box">
@@ -145,15 +111,13 @@
 <footer class="footer">
   <div class="footer-left">
     <strong>Ponderr Schoolz</strong><br>
-    Powered by <a href="https://rangeinformatics.com" target="_blank">Rangeinformatics</a>
+    Powered by <a href="https://rangeinfo.pro" target="_blank">Rangeinformatics</a>
   </div>
 
   <div class="footer-center">
     <div class="social-icons">
-      <a href="#"><img src="assets/icons/facebook.svg"></a>
-      <a href="#"><img src="assets/icons/twitter.svg"></a>
-      <a href="#"><img src="assets/icons/instagram.svg"></a>
-      <a href="#"><img src="assets/icons/linkedin.svg"></a>
+      <a href="https://facebook.com/alphabudzz" target="_blank"><img src="assets/icons/facebook.svg"></a>
+      <a href="https://linkedin.com/in/rangeinfo" target="_blank"><img src="assets/icons/linkedin.svg"></a>
     </div>
   </div>
 
@@ -165,7 +129,6 @@
 
 <script>
   loadSchoolDropdown();
-  function setTheme(theme) { document.body.className = theme; }
 </script>
 
 </body>
